@@ -139,6 +139,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="kisspng-computer-icons-portable-network-graphics-vector-gr-login-icon-png-single-sign-on-icon-539x539-p-5cf3251b86a5e2.2608025915594386195515.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

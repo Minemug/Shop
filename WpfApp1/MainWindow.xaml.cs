@@ -29,7 +29,7 @@ namespace WpfApp1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var mail = MailTextBox.Text;
-            var password = HasloTextBox.Text;
+            var password = PasswordBox.Password.ToString();
             var db = new ShopEntities();
             IQueryable<Client> ClientsTable = db.Client;
             bool loggedin = false;
@@ -37,7 +37,6 @@ namespace WpfApp1
             {
                 if(mail == item.Mail)
                 {
-
                         if (password == item.ClientPassword)
                             loggedin = true;
                 }
@@ -50,6 +49,20 @@ namespace WpfApp1
             
         }
 
-  
+        private void RejestracjaLabel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            RejestracjaLabel.Foreground = Brushes.LimeGreen;
+        }
+
+        private void RejestracjaLabel_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+            RejestracjaLabel.Foreground = Brushes.LightGray;
+        }
+
+        private void RejestracjaLabel_KeyDown(object sender, KeyEventArgs e)
+        {
+            //odpal nowe okno
+        }
     }
 }
