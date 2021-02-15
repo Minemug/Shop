@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="398.4" Width="624.8">
     <Grid>
-        
+        <Label Content="EMAIL" HorizontalAlignment="Left" Margin="73,88,0,0" VerticalAlignment="Top" Width="124" FontSize="24"/>
+        <Label Content="HASŁO" HorizontalAlignment="Left" Margin="73,164,0,0" VerticalAlignment="Top" Height="68" Width="130" FontSize="24"/>
+        <TextBox x:Name="MailTextBox" HorizontalAlignment="Left" Height="37" Margin="219,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="261" FontSize="24"/>
+        <TextBox x:Name="HasloTextBox" HorizontalAlignment="Left" Height="31" Margin="219,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="261" FontSize="24"/>
+        <Button x:Name="ZalogujButton" Content="ZALOGUJ" HorizontalAlignment="Left" Margin="219,251,0,0" VerticalAlignment="Top" Width="261" Height="42" Click="Button_Click" FontSize="24"/>
+
     </Grid>
 </Window>

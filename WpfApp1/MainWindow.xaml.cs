@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity;
 
 namespace WpfApp1
 {
@@ -24,5 +25,31 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var mail = MailTextBox.Text;
+            var password = HasloTextBox.Text;
+            var db = new ShopEntities();
+            IQueryable<Client> ClientsTable = db.Client;
+            bool loggedin = false;
+            foreach (var item in ClientsTable)
+            {
+                if(mail == item.Mail)
+                {
+
+                        if (password == item.ClientPassword)
+                            loggedin = true;
+                }
+
+            }
+            if (loggedin)
+                MessageBox.Show("zalogowano");
+            else 
+                MessageBox.Show("zle dane");
+            
+        }
+
+  
     }
 }
