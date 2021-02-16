@@ -37,14 +37,13 @@ namespace WpfApp1
             {
                 if(mail == item.Mail)
                 {
-                        if (password == item.ClientPassword)
-                            loggedin = true;
+                    if (password == item.ClientPassword)
+                        loggedin = true;
+                    else MessageBox.Show("Wpisałeś niepoprawne hasło");
                 }
             }
             if (loggedin)
                 MessageBox.Show("zalogowano");
-            else 
-                MessageBox.Show("zle dane");
         }
 
         private void RejestracjaLabel_MouseEnter(object sender, MouseEventArgs e)

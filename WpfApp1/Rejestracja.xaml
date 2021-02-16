@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Rejestracja" Height="450" Width="800">
+        Title="Rejestracja" Height="643.009" Width="603.792" Icon="kisspng-computer-icons-portable-network-graphics-vector-gr-login-icon-png-single-sign-on-icon-539x539-p-5cf3251b86a5e2.2608025915594386195515.png" Background="#FF24292E">
     <Grid>
-        
+        <Label Content="Imię" HorizontalAlignment="Left" Margin="95,62,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
+        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="95,114,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
+        <Label Content="Rok urodzenia" HorizontalAlignment="Left" Margin="95,166,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="95,217,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
+        <Label Content="Telefon" HorizontalAlignment="Left" Margin="95,271,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
+        <Label Content="Hasło" HorizontalAlignment="Left" Margin="95,325,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="295,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="295,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="295,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="295,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="295,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="295,325,0,0" VerticalAlignment="Top" Width="262" Height="35" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <Label Content="Powtórz hasło" HorizontalAlignment="Left" Margin="95,379,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="295,379,0,0" VerticalAlignment="Top" Width="262" Height="35" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <CheckBox x:Name="CheckBox" Content="Akceptuję warunki korzystania z platformy login" HorizontalAlignment="Left" Margin="295,452,0,0" VerticalAlignment="Top" Height="33" Width="280" Foreground="#FF9DA5B4"/>
+        <Button Content="Zarejestruj się" HorizontalAlignment="Left" Margin="429,540,0,0" VerticalAlignment="Top" Width="128" Height="31" Background="#FF1B1D26" Foreground="#FF9DA5B4" FontSize="18"/>
+
     </Grid>
 </Window>
