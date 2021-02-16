@@ -23,5 +23,25 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var FirstName = FirstNameTextBox.Text;
+            var LastName = LastNameTextBox.Text;
+            var BornYear = Int32.TryParse(BornYearTextBox.Text, out int deafult);
+            var Telephone = PhoneTextBox.Text;
+            var Pass1 = PasswordTextBox.Password.ToString();
+            var Pass2 = SecondPasswTextBox.Password.ToString();
+            if ((bool)CheckBox.IsChecked)
+            {
+                if (Pass1 == Pass2)
+                {
+                    //zarejestruj
+                }
+                else MessageBox.Show("Podane hasła nie są takie same!");
+            }
+            else MessageBox.Show("Musisz zaakceptować nasze warunki!");
+
+        }
     }
 }
