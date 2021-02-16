@@ -13,16 +13,17 @@
         <Label Content="Email" HorizontalAlignment="Left" Margin="95,217,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
         <Label Content="Telefon" HorizontalAlignment="Left" Margin="95,271,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
         <Label Content="Hasło" HorizontalAlignment="Left" Margin="95,325,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="295,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="295,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="295,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="295,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="295,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="295,325,0,0" VerticalAlignment="Top" Width="262" Height="35" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <TextBox x:Name="FirstNameTextBox" HorizontalAlignment="Left" Height="35" Margin="295,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <TextBox x:Name="LastNameTextBox" HorizontalAlignment="Left" Height="35" Margin="295,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <TextBox x:Name="EmailTextBox" HorizontalAlignment="Left" Height="35" Margin="295,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <TextBox x:Name="PhoneTextBox" HorizontalAlignment="Left" Height="35" Margin="295,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <TextBox x:Name="BornYearTextBox" HorizontalAlignment="Left" Height="35" Margin="295,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Margin="295,325,0,0" VerticalAlignment="Top" Width="262" Height="35" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
         <Label Content="Powtórz hasło" HorizontalAlignment="Left" Margin="95,379,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF9DA5B4" FontSize="18" Height="35"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="295,379,0,0" VerticalAlignment="Top" Width="262" Height="35" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
+        <PasswordBox x:Name="SecondPasswTextBox" HorizontalAlignment="Left" Margin="295,379,0,0" VerticalAlignment="Top" Width="262" Height="35" Background="#FF1B1D26" Foreground="#FF9DA5B4"/>
         <CheckBox x:Name="CheckBox" Content="Akceptuję warunki korzystania z platformy login" HorizontalAlignment="Left" Margin="295,452,0,0" VerticalAlignment="Top" Height="33" Width="280" Foreground="#FF9DA5B4"/>
-        <Button Content="Zarejestruj się" HorizontalAlignment="Left" Margin="429,540,0,0" VerticalAlignment="Top" Width="128" Height="31" Background="#FF1B1D26" Foreground="#FF9DA5B4" FontSize="18"/>
+        <Button x:Name="RegisterButton" Content="Zarejestruj się" HorizontalAlignment="Left" Margin="429,540,0,0" VerticalAlignment="Top" Width="128" Height="31" Background="#FF1B1D26" Foreground="#FF9DA5B4" FontSize="18" Click="Button_Click"/>
+        <Button x:Name="ComebackButton" Content="Wróć do logowania" HorizontalAlignment="Left" Margin="25,540,0,0" VerticalAlignment="Top" Width="166" Height="31" Background="#FF1B1D26" Foreground="#FF9DA5B4" FontSize="18" Click="ComeBackClick"/>
 
     </Grid>
 </Window>

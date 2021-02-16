@@ -28,8 +28,9 @@ namespace WpfApp1
         {
             var FirstName = FirstNameTextBox.Text;
             var LastName = LastNameTextBox.Text;
-            var BornYear = Int32.TryParse(BornYearTextBox.Text, out int deafult);
+            var BornYear = Int32.Parse(BornYearTextBox.Text);
             var Telephone = PhoneTextBox.Text;
+            var Email = EmailTextBox.Text;
             var Pass1 = PasswordTextBox.Password.ToString();
             var Pass2 = SecondPasswTextBox.Password.ToString();
             if ((bool)CheckBox.IsChecked)
@@ -37,11 +38,24 @@ namespace WpfApp1
                 if (Pass1 == Pass2)
                 {
                     //zarejestruj
+                    var db = new ShopEntities();
+                    var clients = db.Set<Client>();
+                    clients.Add(new Client { FirstName = FirstName, LastName = LastName ,
+                        BornYear = BornYear,PhoneNb = Telephone, ClientPassword = Pass1, Mail = Email});
+                    db.SaveChanges();
+                    MessageBox.Show("Zarejestrowano!");
                 }
                 else MessageBox.Show("Podane hasła nie są takie same!");
             }
             else MessageBox.Show("Musisz zaakceptować nasze warunki!");
 
+        }
+
+        private void ComeBackClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow loginWindow = new MainWindow();
+            loginWindow.Show();
         }
     }
 }
