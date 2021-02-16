@@ -40,13 +40,11 @@ namespace WpfApp1
                         if (password == item.ClientPassword)
                             loggedin = true;
                 }
-
             }
             if (loggedin)
                 MessageBox.Show("zalogowano");
             else 
                 MessageBox.Show("zle dane");
-            
         }
 
         private void RejestracjaLabel_MouseEnter(object sender, MouseEventArgs e)
@@ -60,9 +58,11 @@ namespace WpfApp1
             RejestracjaLabel.Foreground = Brushes.LightGray;
         }
 
-        private void RejestracjaLabel_KeyDown(object sender, KeyEventArgs e)
+        private void RejestracjaLabel_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //odpal nowe okno
+            this.Hide();
+            Rejestracja secondWindow = new Rejestracja();
+            secondWindow.Show();
         }
     }
 }
