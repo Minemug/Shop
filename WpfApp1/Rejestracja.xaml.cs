@@ -35,9 +35,8 @@ namespace WpfApp1
             var Pass2 = SecondPasswTextBox.Password.ToString();
             if ((bool)CheckBox.IsChecked)
             {
-                if (Pass1 == Pass2)
+                if (Pass1 == Pass2 && Pass1 != "")
                 {
-                    //zarejestruj
                     var db = new ShopEntities();
                     var clients = db.Set<Client>();
                     clients.Add(new Client { FirstName = FirstName, LastName = LastName ,

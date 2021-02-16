@@ -43,7 +43,12 @@ namespace WpfApp1
                 }
             }
             if (loggedin)
-                MessageBox.Show("zalogowano");
+            {
+                LoggedIn loggedInWindow = new LoggedIn();
+                loggedInWindow.Show();
+                this.Close();
+            }
+                
         }
 
         private void RejestracjaLabel_MouseEnter(object sender, MouseEventArgs e)

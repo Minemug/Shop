@@ -21,3 +21,5 @@ C:\Users\minem\Desktop\2 rok\Shop\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\minem\Desktop\2 rok\Shop\WpfApp1\obj\Debug\WpfApp1.pdb
 C:\Users\minem\Desktop\2 rok\Shop\WpfApp1\obj\Debug\Rejestracja.g.cs
 C:\Users\minem\Desktop\2 rok\Shop\WpfApp1\obj\Debug\Rejestracja.baml
+C:\Users\minem\Desktop\2 rok\Shop\WpfApp1\obj\Debug\LoggedIn.g.cs
+C:\Users\minem\Desktop\2 rok\Shop\WpfApp1\obj\Debug\LoggedIn.baml
