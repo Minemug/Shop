@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,9 +34,11 @@ namespace WpfApp1
             var index = ComboBox.SelectedIndex + 1;//W sqlu index zaczyna sie od 1
             int ClientID = Convert.ToInt32(Passdata.Text);
             var basket = db.Set<Basket>();
-            if(quantity>0 && ComboBox.IsSelectionBoxHighlighted)
+            if(quantity>0)
             {
                 basket.Add(new Basket {ProductID = index, Quantity = quantity, ClientID = ClientID});
+                db.SaveChanges();
+                MessageBox.Show("Dodano produkt");
             }
         }
 
@@ -48,10 +51,19 @@ namespace WpfApp1
             }
         }
 
-        private void DataGrid_Initialized(object sender, EventArgs e)
+
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            var basket = db.Set<Basket>();
-            DataGrid.ItemsSource = basket.Local;
+            int ClientID = Convert.ToInt32(Passdata.Text);
+            IEnumerable<Basket> basket = db.Basket.Local;
+            DataGrid.ItemsSource = basket;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow loginWindow = new MainWindow();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }
