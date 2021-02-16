@@ -25,7 +25,7 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-
+        public int loggerID;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var mail = MailTextBox.Text;
@@ -38,13 +38,17 @@ namespace WpfApp1
                 if(mail == item.Mail)
                 {
                     if (password == item.ClientPassword)
+                    {
                         loggedin = true;
+                        loggerID = item.ClientID;
+                    }
                     else MessageBox.Show("Wpisałeś niepoprawne hasło");
                 }
             }
             if (loggedin)
             {
                 LoggedIn loggedInWindow = new LoggedIn();
+                loggedInWindow.Passdata.Text = loggerID.ToString();
                 loggedInWindow.Show();
                 this.Close();
             }

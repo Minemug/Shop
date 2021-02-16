@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace WpfApp1
 {
     /// <summary>
@@ -19,20 +20,38 @@ namespace WpfApp1
     /// </summary>
     public partial class LoggedIn : Window
     {
+        ShopEntities db = new ShopEntities();
+        
         public LoggedIn()
         {
             InitializeComponent();
         }
-
+        
         private void AddToBasketButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            var quantity = Convert.ToInt32(QuantityTextBox.Text);
+            var index = ComboBox.SelectedIndex + 1;//W sqlu index zaczyna sie od 1
+            int ClientID = Convert.ToInt32(Passdata.Text);
+            var basket = db.Set<Basket>();
+            if(quantity>0 && ComboBox.IsSelectionBoxHighlighted)
+            {
+                basket.Add(new Basket {ProductID = index, Quantity = quantity, ClientID = ClientID});
+            }
         }
 
         private void ComboBox_Initialized(object sender, EventArgs e)
         {
-            ComboBox.Items.Add("X");
-            ComboBox.Items.Add("Y");
+            var products = db.Set<Products>();
+            foreach (var item in products)
+            {
+                ComboBox.Items.Add(item.ProductName);
+            }
+        }
+
+        private void DataGrid_Initialized(object sender, EventArgs e)
+        {
+            var basket = db.Set<Basket>();
+            DataGrid.ItemsSource = basket.Local;
         }
     }
 }
