@@ -5,17 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="LoggedIn" Height="450" Width="800" Icon="kisspng-computer-icons-portable-network-graphics-vector-gr-login-icon-png-single-sign-on-icon-539x539-p-5cf3251b86a5e2.2608025915594386195515.png">
-    <Grid Background="#FF24292E">
-        <Label Content="Dodaj produkt do koszyka" HorizontalAlignment="Left" Margin="27,28,0,0" VerticalAlignment="Top" Width="220" Foreground="#FF9DA5A9" FontSize="18" Height="43"/>
-        <DataGrid x:Name="DataGrid" HorizontalAlignment="Left" Height="211" Margin="403,87,0,0" VerticalAlignment="Top" Width="295" Loaded="DataGrid_Loaded"/>
+        Title="LoggedIn" Height="450" Width="800" Icon="kisspng-computer-icons-portable-network-graphics-vector-gr-login-icon-png-single-sign-on-icon-539x539-p-5cf3251b86a5e2.2608025915594386195515.png" Loaded="LoggedIn1_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="basketViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Basket}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid Background="#FF24292E" DataContext="{StaticResource basketViewSource}">
+        <Label Content="Dodaj produkt do koszyka" HorizontalAlignment="Left" Margin="27,15,0,0" VerticalAlignment="Top" Width="220" Foreground="#FF9DA5A9" FontSize="18" Height="43"/>
         <Label Content="Koszyk" HorizontalAlignment="Left" Margin="403,28,0,0" VerticalAlignment="Top" Width="260" Foreground="#FF9DA5A9" FontSize="18" Height="43"/>
-        <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" Margin="27,87,0,0" VerticalAlignment="Top" Width="220" Background="Black" Foreground="#FF24292E" Initialized="ComboBox_Initialized" BorderBrush="#FF9DA5A9"/>
-        <Label Content="Ilość" HorizontalAlignment="Left" Margin="27,130,0,0" VerticalAlignment="Top" Width="69" Foreground="#FF9DA5A9" FontSize="18" Height="33"/>
-        <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="33" Margin="127,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5A9"/>
-        <Button x:Name="AddToBasketButton" Content="Dodaj" HorizontalAlignment="Left" Margin="126,201,0,0" VerticalAlignment="Top" Width="121" Height="31" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5A9" Click="AddToBasketButton_Click"/>
+        <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" Margin="27,58,0,0" VerticalAlignment="Top" Width="220" Background="Black" Foreground="#FF24292E" Initialized="ComboBox_Initialized" BorderBrush="#FF9DA5A9"/>
+        <Label Content="Ilość" HorizontalAlignment="Left" Margin="27,85,0,0" VerticalAlignment="Top" Width="69" Foreground="#FF9DA5A9" FontSize="18" Height="33"/>
+        <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="33" Margin="126,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5A9"/>
+        <Button x:Name="AddToBasketButton" Content="Dodaj" HorizontalAlignment="Left" Margin="125,123,0,0" VerticalAlignment="Top" Width="121" Height="31" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5A9" Click="AddToBasketButton_Click"/>
         <TextBlock x:Name="Passdata" HorizontalAlignment="Left" Margin="10,394,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="126" Foreground="#FF24292E"/>
-        <Button Content="Powrót do logowania" HorizontalAlignment="Left" Height="39" Margin="10,335,0,0" VerticalAlignment="Top" Width="180" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5A9" Click="Button_Click"/>
+        <Button Content="Powrót do logowania" HorizontalAlignment="Left" Height="39" Margin="10,350,0,0" VerticalAlignment="Top" Width="180" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5A9" Click="Button_Click"/>
+        <DataGrid x:Name="basketDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="403,76,147,22" RowDetailsVisibilityMode="VisibleWhenSelected" >
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="basketIDColumn" Binding="{Binding BasketID}" Header="Basket ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="clientIDColumn" Binding="{Binding ClientID}" Header="Client ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="productIDColumn" Binding="{Binding ProductID}" Header="Product ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="quantityColumn" Binding="{Binding Quantity}" Header="Quantity" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Usuń produkt z koszyka" HorizontalAlignment="Left" Margin="26,172,0,0" VerticalAlignment="Top" Width="220" Foreground="#FF9DA5A9" FontSize="18" Height="43"/>
+        <ComboBox x:Name="ComboBoxDelete" HorizontalAlignment="Left" Margin="27,215,0,0" VerticalAlignment="Top" Width="220" Background="Black" Foreground="#FF24292E"  BorderBrush="#FF9DA5A9" Loaded="ComboBoxDelete_Loaded"/>
+        <Button x:Name="DeleteFromBasketButton" Content="Usuń" HorizontalAlignment="Left" Margin="126,260,0,0" VerticalAlignment="Top" Width="121" Height="31" FontSize="18" Background="#FF1B1D26" Foreground="#FF9DA5A9" Click="DeleteFromBasketButton_Click"/>
 
     </Grid>
 </Window>
