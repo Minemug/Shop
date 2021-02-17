@@ -13,7 +13,7 @@
         <Button x:Name="ZalogujButton" Content="ZALOGUJ" HorizontalAlignment="Left" Margin="219,251,0,0" VerticalAlignment="Top" Width="261" Height="42" Click="Button_Click" FontSize="24" Background="#FF1B1D23" Foreground="#FF9DA5B4"/>
         <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="219,164,0,0" VerticalAlignment="Top" FontSize="24" Width="261" Height="37" Background="#FF1B1D23" Foreground="#FF9DA5B4"/>
         <Label Content="Nie masz jeszcze konta ?" HorizontalAlignment="Left" Margin="219,298,0,0" VerticalAlignment="Top" Width="149" FontWeight="Bold" Foreground="#FF9DA5B4"/>
-        <Label x:Name="RejestracjaLabel" Content="Zarejestruj się tutaj!" HorizontalAlignment="Left" Margin="373,298,0,0" VerticalAlignment="Top" Width="137" FontWeight="Bold" FontStyle="Italic" MouseEnter="RejestracjaLabel_MouseEnter" MouseLeave="RejestracjaLabel_MouseLeave" Foreground="#FF9DA5B4" MouseDown="RejestracjaLabel_MouseDown"/>
+        <Label x:Name="RejestracjaLabel" Content="Zarejestruj się tutaj!" HorizontalAlignment="Left" Margin="368,298,0,0" VerticalAlignment="Top" Width="137" FontWeight="Bold" FontStyle="Italic" MouseEnter="RejestracjaLabel_MouseEnter" MouseLeave="RejestracjaLabel_MouseLeave" Foreground="#FF9DA5B4" MouseDown="RejestracjaLabel_MouseDown"/>
         <Label Content="LOGIN" HorizontalAlignment="Left" Margin="219,26,0,0" VerticalAlignment="Top" Width="94" FontSize="24" Foreground="#FF9DA5B4"/>
 
     </Grid>

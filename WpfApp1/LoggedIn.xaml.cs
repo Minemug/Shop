@@ -64,9 +64,6 @@ namespace WpfApp1
             }
         }
 
-
-     
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow loginWindow = new MainWindow();
@@ -79,6 +76,7 @@ namespace WpfApp1
             db.Basket.Load();
             basketViewSource.Source = db.Basket.Local;
         }
+
         private void DeleteFromBasketButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -86,31 +84,28 @@ namespace WpfApp1
             var ord = (from o in db.Basket.Local
                        where o.BasketID == indexlist[index]
                        select o).FirstOrDefault();
-            //try
-            //{
-            db.Basket.Remove(ord);
-            //}
-            //catch (Exception)
-            //{
-
-            //    MessageBox.Show("upsi");
-            //}
+            try
+            {
+                db.Basket.Remove(ord);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("upsi");
+            }
             db.SaveChanges();
             ComboBoxDelete.Items.Clear();
             FillDeleteCombobox();
         }
 
         int[] indexlist = new int[50];
-        int i = 0;
         private void ComboBoxDelete_Loaded(object sender, RoutedEventArgs e)
         {
             FillDeleteCombobox();
         }
-
         private void FillDeleteCombobox()
         {
             indexlist = new int[50];
-            i = 0;
+            int i = 0;
             foreach (var item in db.Basket)
             {
                 if (item.ClientID == Convert.ToInt32(Passdata.Text))
