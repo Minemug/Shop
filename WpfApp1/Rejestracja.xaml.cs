@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Interaction logic for Rejestracja.xaml
+    /// Register page
     /// </summary>
     public partial class Rejestracja : Window
     {

@@ -17,7 +17,7 @@ using System.Data.Entity;
 namespace WpfApp1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Login window
     /// </summary>
     public partial class MainWindow : Window
     {

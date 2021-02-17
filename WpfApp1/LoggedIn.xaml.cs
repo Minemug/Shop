@@ -18,7 +18,7 @@ using System.Data.Entity;
 namespace WpfApp1
 {
     /// <summary>
-    /// Interaction logic for LoggedIn.xaml
+    /// Window you get after login
     /// </summary>
     public partial class LoggedIn : Window
     {
@@ -84,9 +84,17 @@ namespace WpfApp1
 
             var index = ComboBoxDelete.SelectedIndex;
             var ord = (from o in db.Basket.Local
-                    where o.BasketID == indexlist[index]
-                    select o).FirstOrDefault();
+                       where o.BasketID == indexlist[index]
+                       select o).FirstOrDefault();
+            //try
+            //{
             db.Basket.Remove(ord);
+            //}
+            //catch (Exception)
+            //{
+
+            //    MessageBox.Show("upsi");
+            //}
             db.SaveChanges();
             ComboBoxDelete.Items.Clear();
             FillDeleteCombobox();
@@ -101,7 +109,8 @@ namespace WpfApp1
 
         private void FillDeleteCombobox()
         {
-            
+            indexlist = new int[50];
+            i = 0;
             foreach (var item in db.Basket)
             {
                 if (item.ClientID == Convert.ToInt32(Passdata.Text))
